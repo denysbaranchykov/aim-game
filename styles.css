@@ -5,8 +5,8 @@
 }
 
 body {
+    font-family: 'Khula', sans-serif;
     color: #fff;
-    font-family: "Khula", sans-serif;
     height: 100vh;
     overflow: hidden;
     margin: 0;
@@ -22,13 +22,14 @@ a:hover {
     color: #16d9e3;
 }
 
+
 .start {
     font-size: 1.5rem;
 }
 
 h1 {
-    line-height: 1.4;
-    font-size: 4rem;
+    line-height: 1.1;
+    font-size: 5rem;
 }
 
 .screen {
@@ -61,7 +62,7 @@ h1 {
 .time-btn {
     background-color: transparent;
     border: 2px solid #c0c0c0;
-    color: #fff;
+    color: #ffd;
     cursor: pointer;
     font-family: inherit;
     padding: 0.5rem 1rem;
@@ -88,14 +89,14 @@ h1 {
     position: relative;
     width: 500px;
     height: 500px;
-    background: linear-gradient(118.38deg, #29323c -4.6%, #485563 200.44%);
-    box-shadow: -8px -8px 20px #2a333d, 10px 7px 20px #475462;
+    background: linear-gradient(118deg, #29323c -4.6%, rgba(12, 209, 229, 0.57) 200%);
+    box-shadow: -8px -8px 20px #2a333d, 10px 7px 20px rgba(30, 201, 87, 0.58);
     border-radius: 30px;
     overflow: hidden;
 }
 
 .circle {
-    background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+    background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef6 100%);
     position: absolute;
     border-radius: 50%;
     cursor: pointer;
