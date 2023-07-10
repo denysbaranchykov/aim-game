@@ -4,11 +4,10 @@ const timeList = document.querySelector('#time-list');
 const timeLeft = document.querySelector('#time');
 const board = document.querySelector('#board');
 const timeHeader = document.querySelector('#time-left');
-const colors = ['green', 'blue', 'red', 'yellow', 'orange', 'purple'];
+const colors = ['#16d9e3', 'green', 'blue', 'red', 'yellow', 'orange', 'purple'];
 
 let time = 0;
 let score = 0;
-
 
 startBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -82,7 +81,6 @@ function getRandomCircleSize(min, max) {
 }
 
 function getRandomCircleColor() {
-    let color =  Math.floor(Math.random() * colors.length);
-    return colors[color];
+    return colors[Math.floor(Math.random() * colors.length)];
 }
 
