@@ -24,7 +24,7 @@ a:hover {
 
 
 .start {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 h1 {
@@ -72,6 +72,11 @@ h1 {
 .time-btn:hover {
     border: 2px solid #16d9e3;
     color: #16d9e3;
+}
+
+.hide-with-opacity {
+    opacity: 0.2;
+    /*display: none;*/
 }
 
 .hide {
