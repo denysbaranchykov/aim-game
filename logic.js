@@ -6,6 +6,9 @@ const board = document.querySelector('#board');
 const timeHeader = document.querySelector('#time-left');
 const colors = ['#16d9e3', 'green', 'blue', 'red', 'yellow', 'orange', 'purple'];
 
+let circles = [];
+
+
 let time = 0;
 let score = 0;
 
@@ -61,11 +64,10 @@ function finishGame() {
 }
 
 function createRandomCircle() {
-    //todo: create first circle with specified color;
 //todo: restart button
-    //todo: when time is 5 sec should be 00:05 not 00:5
 
     const circle = document.createElement('div');
+    circles.push(circle);
     const size = getRandomCircleSize(10, 50);
     const {width, height} = board.getBoundingClientRect();
     const x = getRandomCircleSize(0, width - 1.5 * size);
@@ -86,6 +88,9 @@ function getRandomCircleSize(min, max) {
 }
 
 function getRandomCircleColor() {
+    if(circles.length === 1) {
+        return colors[0]
+    }
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
