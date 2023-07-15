@@ -41,15 +41,16 @@ function decreaseTime() {
         finishGame();
     } else {
         let current = --time;
-        if (current < 10) {
-            current = `0${current}`
-        }
         setTime(current);
     }
 }
 
 function setTime(timeValue) {
-    timeLeft.innerHTML = `00:${timeValue}`
+    if (timeValue < 10) {
+        timeLeft.innerHTML = `00:0${timeValue}`
+    } else {
+        timeLeft.innerHTML = `00:${timeValue}`
+    }
 }
 
 function finishGame() {
@@ -60,6 +61,10 @@ function finishGame() {
 }
 
 function createRandomCircle() {
+    //todo: create first circle with specified color;
+//todo: restart button
+    //todo: when time is 5 sec should be 00:05 not 00:5
+
     const circle = document.createElement('div');
     const size = getRandomCircleSize(10, 50);
     const {width, height} = board.getBoundingClientRect();
@@ -83,4 +88,7 @@ function getRandomCircleSize(min, max) {
 function getRandomCircleColor() {
     return colors[Math.floor(Math.random() * colors.length)];
 }
+
+
+
 
