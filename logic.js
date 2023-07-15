@@ -6,6 +6,7 @@ const board = document.querySelector('#board');
 const timeHeader = document.querySelector('#time-left');
 const colors = ['#16d9e3', 'green', 'blue', 'red', 'yellow', 'orange', 'purple'];
 
+
 let circles = [];
 
 
@@ -60,7 +61,8 @@ function finishGame() {
     timeHeader.classList.add('hide-with-opacity');
 // to remove time we can use timeLeft.parentNode.remove(); --> parentNode to apply to a parent
 // because timeList is a child to all header
-    board.innerHTML = `<h1>Score: <span class="primary">${score}</span></h1>`
+    board.innerHTML = `<h1>Score: <span class="primary">${score}</span></h1>`;
+    restartGame();
 }
 
 function createRandomCircle() {
@@ -79,7 +81,6 @@ function createRandomCircle() {
     circle.style.left = `${x}px`;
     circle.style.background = getRandomCircleColor();
     circle.style.boxShadow = `0 0 8px ${getRandomCircleColor()}, 0 0 8px ${getRandomCircleColor()}`
-    console.log('backColor', circle.style.backgroundColor)
     board.append(circle);
 }
 
@@ -92,6 +93,24 @@ function getRandomCircleColor() {
         return colors[0]
     }
     return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function restartGame() {
+    const restartBtn = document.createElement('button');
+    restartBtn.style.width = '100px';
+    restartBtn.style.height = '50px';
+    restartBtn.style.background = '#83dc6a';
+    restartBtn.style.position = 'absolute';
+    restartBtn.style.top = '280px';
+    restartBtn.style.left = 'auto';
+    restartBtn.textContent = 'Restart';
+    restartBtn.style.fontSize = '20px';
+    restartBtn.style.cursor = 'pointer';
+    restartBtn.style.color = 'rgba(27,31,59,0.83)';
+    restartBtn.style.borderRadius = '10px';
+    restartBtn.style.border = '2px solid #5f5';
+    restartBtn.style.boxShadow = `0 0 10px ${getRandomCircleColor()}`;
+    board.append(restartBtn);
 }
 
 
