@@ -6,10 +6,7 @@ const board = document.querySelector('#board');
 const timeHeader = document.querySelector('#time-left');
 const colors = ['#16d9e3', 'green', 'blue', 'red', 'yellow', 'orange', 'purple'];
 
-
 let circles = [];
-
-
 let time = 0;
 let score = 0;
 
@@ -66,8 +63,6 @@ function finishGame() {
 }
 
 function createRandomCircle() {
-//todo: restart button
-
     const circle = document.createElement('div');
     circles.push(circle);
     const size = getRandomCircleSize(10, 50);
@@ -80,7 +75,7 @@ function createRandomCircle() {
     circle.style.top = `${y}px`;
     circle.style.left = `${x}px`;
     circle.style.background = getRandomCircleColor();
-    circle.style.boxShadow = `0 0 8px ${getRandomCircleColor()}, 0 0 8px ${getRandomCircleColor()}`
+    circle.style.boxShadow = `0 0 12px ${circle.style.background}`
     board.append(circle);
 }
 
@@ -89,29 +84,32 @@ function getRandomCircleSize(min, max) {
 }
 
 function getRandomCircleColor() {
-    if(circles.length === 1) {
+    if (circles.length === 1) {
         return colors[0]
     }
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
+//todo: restart button
+//not finished
+
 function restartGame() {
     const restartBtn = document.createElement('button');
-    restartBtn.style.width = '100px';
-    restartBtn.style.height = '50px';
-    restartBtn.style.background = '#83dc6a';
-    restartBtn.style.position = 'absolute';
-    restartBtn.style.top = '280px';
-    restartBtn.style.left = 'auto';
+    restartBtn.classList.add('restart-btn');
     restartBtn.textContent = 'Restart';
-    restartBtn.style.fontSize = '20px';
-    restartBtn.style.cursor = 'pointer';
-    restartBtn.style.color = 'rgba(27,31,59,0.83)';
-    restartBtn.style.borderRadius = '10px';
-    restartBtn.style.border = '2px solid #5f5';
-    restartBtn.style.boxShadow = `0 0 10px ${getRandomCircleColor()}`;
+    restartBtn.style.boxShadow = `0 0 10px ${colors[0]}`;
+    restartBtn.addEventListener('click', clickRestart);
     board.append(restartBtn);
 }
+
+function clickRestart() {
+    console.log('restart');
+    screens[2].classList.add('down');
+}
+
+
+
+
 
 
 
